@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<None Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\UnrealFrontend.Target.cs" />
+		<Filter Include="Config">
+			<UniqueIdentifier>{66E6324D-6B17-43AA-8066-28C9B182EB60}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\..\..\..\Git\UnrealEngine\Engine\Programs\UnrealFrontend\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\UnrealFrontend.Build.cs" />
+		<Filter Include="Private">
+			<UniqueIdentifier>{F680913C-E34A-4E9A-86F4-1039D3D3B681}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Private\UnrealFrontendMain.cpp">
+			<Filter>Private</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Private\UnrealFrontendMain.h">
+			<Filter>Private</Filter>
+		</ClInclude >
+		<Filter Include="Private\Commands">
+			<UniqueIdentifier>{53554016-5E53-48E5-9EF3-D40B095B3D6F}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Private\Commands\DeployCommand.cpp">
+			<Filter>Private\Commands</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Private\Commands\DeployCommand.h">
+			<Filter>Private\Commands</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Private\Commands\LaunchCommand.cpp">
+			<Filter>Private\Commands</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Private\Commands\LaunchCommand.h">
+			<Filter>Private\Commands</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Private\Commands\LaunchFromProfileCommand.cpp">
+			<Filter>Private\Commands</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Private\Commands\LaunchFromProfileCommand.h">
+			<Filter>Private\Commands</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Private\Commands\PackageCommand.cpp">
+			<Filter>Private\Commands</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Private\Commands\PackageCommand.h">
+			<Filter>Private\Commands</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Private\Commands\StatsConvertCommand.cpp">
+			<Filter>Private\Commands</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Private\Commands\StatsConvertCommand.h">
+			<Filter>Private\Commands</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Private\Commands\StatsDumpMemoryCommand.cpp">
+			<Filter>Private\Commands</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Private\Commands\StatsDumpMemoryCommand.h">
+			<Filter>Private\Commands</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Private\Commands\UserInterfaceCommand.cpp">
+			<Filter>Private\Commands</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Private\Commands\UserInterfaceCommand.h">
+			<Filter>Private\Commands</Filter>
+		</ClInclude >
+		<Filter Include="Private\Linux">
+			<UniqueIdentifier>{08C6EDDC-4E8F-4FF8-9AC0-1FCC803E38E3}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Private\Linux\LinuxUnrealFrontendMain.cpp">
+			<Filter>Private\Linux</Filter>
+		</ClCompile >
+		<Filter Include="Private\Mac">
+			<UniqueIdentifier>{C27059DA-8158-4B93-AF0D-60C4CF1852CB}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Private\Mac\MacUnrealFrontendMain.cpp">
+			<Filter>Private\Mac</Filter>
+		</ClCompile >
+		<Filter Include="Private\Windows">
+			<UniqueIdentifier>{7C859ECB-D862-42B0-88A3-518041C4E08D}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Private\Windows\WindowsUnrealFrontendMain.cpp">
+			<Filter>Private\Windows</Filter>
+		</ClCompile >
+		<Filter Include="Resources">
+			<UniqueIdentifier>{2C2C5C71-FE86-49AD-897B-1866491F0301}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Resources\Windows">
+			<UniqueIdentifier>{E17C6114-7038-49AD-A32B-FF811A10FB12}</UniqueIdentifier>
+		</Filter>
+		<Manifest Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Resources\Windows\Debug-UnrealFrontend-Win32.manifest">
+			<Filter>Resources\Windows</Filter>
+		</Manifest >
+		<Manifest Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Resources\Windows\Debug-UnrealFrontend-Win64.manifest">
+			<Filter>Resources\Windows</Filter>
+		</Manifest >
+		<Manifest Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Resources\Windows\UnrealFrontend-Win32.manifest">
+			<Filter>Resources\Windows</Filter>
+		</Manifest >
+		<Manifest Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Resources\Windows\UnrealFrontend-Win64.manifest">
+			<Filter>Resources\Windows</Filter>
+		</Manifest >
+		<None Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Resources\Windows\UnrealFrontend.ico">
+			<Filter>Resources\Windows</Filter>
+		</None >
+		<ResourceCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\UnrealFrontend\Resources\Windows\UnrealFrontend.rc">
+			<Filter>Resources\Windows</Filter>
+		</ResourceCompile >
+	</ItemGroup>
+</Project>

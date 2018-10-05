@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<None Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\SymbolDebugger\SymbolDebugger.Target.cs" />
+		<None Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\SymbolDebugger\SymbolDebugger.Build.cs" />
+		<Filter Include="Private">
+			<UniqueIdentifier>{33924BC9-DA5F-4446-A311-A06C35919DA7}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\SymbolDebugger\Private\SSymbolDebugger.cpp">
+			<Filter>Private</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\SymbolDebugger\Private\SSymbolDebugger.h">
+			<Filter>Private</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\SymbolDebugger\Private\SymbolDebugger.cpp">
+			<Filter>Private</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\SymbolDebugger\Private\SymbolDebugger.h">
+			<Filter>Private</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\SymbolDebugger\Private\SymbolDebuggerApp.cpp">
+			<Filter>Private</Filter>
+		</ClCompile >
+		<Filter Include="Private\Mac">
+			<UniqueIdentifier>{2728CD06-B206-4558-A408-CECBF62F962F}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\SymbolDebugger\Private\Mac\SymbolDebuggerMainMac.cpp">
+			<Filter>Private\Mac</Filter>
+		</ClCompile >
+		<Filter Include="Private\Windows">
+			<UniqueIdentifier>{B9D7DEBE-3037-4A46-B1DB-BB0BD2524E56}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\SymbolDebugger\Private\Windows\SymbolDebuggerMainWindows.cpp">
+			<Filter>Private\Windows</Filter>
+		</ClCompile >
+		<Filter Include="Public">
+			<UniqueIdentifier>{CB3C4BDC-674D-4712-B2A9-ABAC97E713C5}</UniqueIdentifier>
+		</Filter>
+		<ClInclude Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\SymbolDebugger\Public\SymbolDebuggerApp.h">
+			<Filter>Public</Filter>
+		</ClInclude >
+		<Filter Include="Resources">
+			<UniqueIdentifier>{09E68B43-7AE0-4913-BA83-2EB8996FFD8F}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Resources\Windows">
+			<UniqueIdentifier>{1C38E419-9BFB-4404-9352-A2BFF48E2326}</UniqueIdentifier>
+		</Filter>
+		<Manifest Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\SymbolDebugger\Resources\Windows\Debug-PCLaunch-Win32.manifest">
+			<Filter>Resources\Windows</Filter>
+		</Manifest >
+		<Manifest Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\SymbolDebugger\Resources\Windows\Debug-PCLaunch-Win64.manifest">
+			<Filter>Resources\Windows</Filter>
+		</Manifest >
+		<Manifest Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\SymbolDebugger\Resources\Windows\PCLaunch-Win32.manifest">
+			<Filter>Resources\Windows</Filter>
+		</Manifest >
+		<Manifest Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\SymbolDebugger\Resources\Windows\PCLaunch-Win64.manifest">
+			<Filter>Resources\Windows</Filter>
+		</Manifest >
+		<ResourceCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\SymbolDebugger\Resources\Windows\PCLaunch.rc">
+			<Filter>Resources\Windows</Filter>
+		</ResourceCompile >
+	</ItemGroup>
+</Project>

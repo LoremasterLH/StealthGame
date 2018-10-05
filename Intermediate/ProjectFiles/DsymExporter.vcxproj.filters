@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<None Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\Mac\DsymExporter\DsymExporter.Target.cs" />
+		<None Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\Mac\DsymExporter\DsymExporter.Build.cs" />
+		<Filter Include="Private">
+			<UniqueIdentifier>{5AFC4780-958C-4BB0-805E-EF2D48DAC7C4}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\Mac\DsymExporter\Private\DsymExporterApp.cpp">
+			<Filter>Private</Filter>
+		</ClCompile >
+		<Filter Include="Private\Mac">
+			<UniqueIdentifier>{6596EDAC-0FA9-4811-9835-E46CB5DA3D46}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\Mac\DsymExporter\Private\Mac\DsymExporterMainMac.cpp">
+			<Filter>Private\Mac</Filter>
+		</ClCompile >
+		<Filter Include="Public">
+			<UniqueIdentifier>{6A09D74C-6C1D-4B53-82FF-432E55084FD4}</UniqueIdentifier>
+		</Filter>
+		<ClInclude Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\Mac\DsymExporter\Public\DsymExporterApp.h">
+			<Filter>Public</Filter>
+		</ClInclude >
+	</ItemGroup>
+</Project>

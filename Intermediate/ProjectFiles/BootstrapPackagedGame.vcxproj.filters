@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<None Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\Windows\BootstrapPackagedGame\BootstrapPackagedGame.Target.cs" />
+		<None Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\Windows\BootstrapPackagedGame\BootstrapPackagedGame.Build.cs" />
+		<Filter Include="Private">
+			<UniqueIdentifier>{A8B06483-4560-4E29-847A-EDA50E28E651}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\Windows\BootstrapPackagedGame\Private\BootstrapPackagedGame.cpp">
+			<Filter>Private</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\Windows\BootstrapPackagedGame\Private\BootstrapPackagedGame.h">
+			<Filter>Private</Filter>
+		</ClInclude >
+		<Filter Include="Resources">
+			<UniqueIdentifier>{4DB33BE4-AC16-4840-B448-0FBCADDC2F75}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Resources\Windows">
+			<UniqueIdentifier>{8736B68D-E6EB-49B8-A415-859ED6BFB119}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\Windows\BootstrapPackagedGame\Resources\Windows\BootstrapPackagedGame.ico">
+			<Filter>Resources\Windows</Filter>
+		</None >
+		<ResourceCompile Include="..\..\..\..\..\Git\UnrealEngine\Engine\Source\Programs\Windows\BootstrapPackagedGame\Resources\Windows\Resource.rc">
+			<Filter>Resources\Windows</Filter>
+		</ResourceCompile >
+	</ItemGroup>
+</Project>
