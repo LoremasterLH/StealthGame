@@ -10,12 +10,37 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class APawn;
 struct FVector;
+enum class EAIState : uint8;
 #ifdef FPSGAME_FPSAIGuard_generated_h
 #error "FPSAIGuard.generated.h already included, missing '#pragma once' in FPSAIGuard.h"
 #endif
 #define FPSGAME_FPSAIGuard_generated_h
 
-#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_14_RPC_WRAPPERS \
+#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execMoveToNextPoint) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->MoveToNextPoint(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnRep_GuardState) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnRep_GuardState(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execResetOrientation) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->ResetOrientation(); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execOnNoiseHeard) \
 	{ \
@@ -38,7 +63,31 @@ struct FVector;
 	}
 
 
-#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execMoveToNextPoint) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->MoveToNextPoint(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnRep_GuardState) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnRep_GuardState(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execResetOrientation) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->ResetOrientation(); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execOnNoiseHeard) \
 	{ \
@@ -61,25 +110,35 @@ struct FVector;
 	}
 
 
-#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_14_INCLASS_NO_PURE_DECLS \
+#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_EVENT_PARMS \
+	struct FPSAIGuard_eventOnStateChanged_Parms \
+	{ \
+		EAIState NewState; \
+	};
+
+
+#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_CALLBACK_WRAPPERS
+#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAFPSAIGuard(); \
 	friend struct Z_Construct_UClass_AFPSAIGuard_Statics; \
 public: \
 	DECLARE_CLASS(AFPSAIGuard, ACharacter, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/FPSGame"), NO_API) \
-	DECLARE_SERIALIZER(AFPSAIGuard)
+	DECLARE_SERIALIZER(AFPSAIGuard) \
+	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
 
-#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_14_INCLASS \
+#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_INCLASS \
 private: \
 	static void StaticRegisterNativesAFPSAIGuard(); \
 	friend struct Z_Construct_UClass_AFPSAIGuard_Statics; \
 public: \
 	DECLARE_CLASS(AFPSAIGuard, ACharacter, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/FPSGame"), NO_API) \
-	DECLARE_SERIALIZER(AFPSAIGuard)
+	DECLARE_SERIALIZER(AFPSAIGuard) \
+	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
 
-#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_14_STANDARD_CONSTRUCTORS \
+#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AFPSAIGuard(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AFPSAIGuard) \
@@ -92,7 +151,7 @@ private: \
 public:
 
 
-#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_14_ENHANCED_CONSTRUCTORS \
+#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AFPSAIGuard(AFPSAIGuard&&); \
@@ -103,29 +162,38 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AFPSAIGuard); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AFPSAIGuard)
 
 
-#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_14_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__PawnSensingComp() { return STRUCT_OFFSET(AFPSAIGuard, PawnSensingComp); }
+#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__PawnSensingComp() { return STRUCT_OFFSET(AFPSAIGuard, PawnSensingComp); } \
+	FORCEINLINE static uint32 __PPO__GuardState() { return STRUCT_OFFSET(AFPSAIGuard, GuardState); } \
+	FORCEINLINE static uint32 __PPO__FirstPatrolPoint() { return STRUCT_OFFSET(AFPSAIGuard, FirstPatrolPoint); } \
+	FORCEINLINE static uint32 __PPO__SecondPatrolPoint() { return STRUCT_OFFSET(AFPSAIGuard, SecondPatrolPoint); } \
+	FORCEINLINE static uint32 __PPO__bPatrol() { return STRUCT_OFFSET(AFPSAIGuard, bPatrol); }
 
 
-#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_11_PROLOG
-#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_14_GENERATED_BODY_LEGACY \
+#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_22_PROLOG \
+	StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_EVENT_PARMS
+
+
+#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	StealthGame_Source_FPSGame_Public_FPSAIGuard_h_14_PRIVATE_PROPERTY_OFFSET \
-	StealthGame_Source_FPSGame_Public_FPSAIGuard_h_14_RPC_WRAPPERS \
-	StealthGame_Source_FPSGame_Public_FPSAIGuard_h_14_INCLASS \
-	StealthGame_Source_FPSGame_Public_FPSAIGuard_h_14_STANDARD_CONSTRUCTORS \
+	StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_PRIVATE_PROPERTY_OFFSET \
+	StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_RPC_WRAPPERS \
+	StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_CALLBACK_WRAPPERS \
+	StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_INCLASS \
+	StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_14_GENERATED_BODY \
+#define StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	StealthGame_Source_FPSGame_Public_FPSAIGuard_h_14_PRIVATE_PROPERTY_OFFSET \
-	StealthGame_Source_FPSGame_Public_FPSAIGuard_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	StealthGame_Source_FPSGame_Public_FPSAIGuard_h_14_INCLASS_NO_PURE_DECLS \
-	StealthGame_Source_FPSGame_Public_FPSAIGuard_h_14_ENHANCED_CONSTRUCTORS \
+	StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_PRIVATE_PROPERTY_OFFSET \
+	StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
+	StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_CALLBACK_WRAPPERS \
+	StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_INCLASS_NO_PURE_DECLS \
+	StealthGame_Source_FPSGame_Public_FPSAIGuard_h_25_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -134,4 +202,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 #define CURRENT_FILE_ID StealthGame_Source_FPSGame_Public_FPSAIGuard_h
 
 
+#define FOREACH_ENUM_EAISTATE(op) \
+	op(EAIState::Idle) \
+	op(EAIState::Suspicious) \
+	op(EAIState::Alerted) 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

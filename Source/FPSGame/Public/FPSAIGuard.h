@@ -7,6 +7,17 @@
 #include "FPSAIGuard.generated.h"
 
 class UPawnSensingComponent;
+class UCharacterMovementComponent;
+
+UENUM(BlueprintType)
+enum class EAIState : uint8
+{
+	Idle,
+
+	Suspicious,
+
+	Alerted,
+};
 
 UCLASS()
 class FPSGAME_API AFPSAIGuard : public ACharacter
@@ -29,6 +40,39 @@ protected:
 
 	UFUNCTION()
 	void OnNoiseHeard(APawn* HeardPawn, const FVector& Location, float Volume);
+
+	FRotator OriginalRotation;
+
+	UFUNCTION()
+	void ResetOrientation();
+
+	FTimerHandle TimerHandle_ResetOrientation;
+
+	UPROPERTY(ReplicatedUsing=OnRep_GuardState)
+	EAIState GuardState;
+
+	// This function gets called every time a guard's state changes, but only on clients.
+	UFUNCTION()
+	void OnRep_GuardState();
+
+	void SetGuardState(EAIState NewState);
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "AI")
+	void OnStateChanged(EAIState NewState);
+
+	UPROPERTY(EditInstanceOnly, Category = "AI", meta = (EditCondition = "bPatrol"))
+	AActor* FirstPatrolPoint;
+
+	UPROPERTY(EditInstanceOnly, Category = "AI", meta = (EditCondition = "bPatrol"))
+	AActor* SecondPatrolPoint;
+
+	AActor* CurrentPatrolPoint;
+
+	UPROPERTY(EditInstanceOnly, Category = "AI")
+	bool bPatrol;
+
+	UFUNCTION()
+	void MoveToNextPoint();
 
 public:	
 	// Called every frame

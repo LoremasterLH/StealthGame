@@ -45,7 +45,7 @@ void AFPSLaunchPad::OverlapLaunchPad(UPrimitiveComponent* OverlappedComp, AActor
 		AFPSCharacter* actor = Cast<AFPSCharacter>(OtherActor);
 		if (actor)
 		{
-			actor->LaunchCharacter(FVector(2000.f, 2000.f, 1500.f) * forwardVector, true, true);
+			actor->LaunchCharacter(FVector(1500.f, 1500.f, 1000.f) * forwardVector, true, true);
 		}
 		else if(OtherComp && OtherComp->IsSimulatingPhysics())
 		{

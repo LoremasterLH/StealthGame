@@ -5,22 +5,26 @@
 #include "FPSCharacter.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Kismet/GameplayStatics.h"
+#include "FPSGameState.h"
 
 AFPSGameMode::AFPSGameMode()
 {
+	// This class instance does not exist on clients.
 	// set default pawn class to our Blueprinted character
 	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnClassFinder(TEXT("/Game/Blueprints/BP_Player"));
 	DefaultPawnClass = PlayerPawnClassFinder.Class;
 
 	// use our custom HUD class
 	HUDClass = AFPSHUD::StaticClass();
+
+	// Tells GameMode which GameState to spawn
+	GameStateClass = AFPSGameState::StaticClass();
 }
 
-void AFPSGameMode::CompleteMission(APawn* InstigatorPawn)
+void AFPSGameMode::CompleteMission(APawn* InstigatorPawn, bool bMissionSuccess)
 {
 	if (InstigatorPawn)
 	{
-		InstigatorPawn->DisableInput(nullptr);	// Disables for whatever pawn was entered.
 		if (SpectatingViewpointClass)
 		{
 
@@ -33,14 +37,19 @@ void AFPSGameMode::CompleteMission(APawn* InstigatorPawn)
 				
 				AActor* NewViewTarget = ReturnedActors[0];
 
-				APlayerController* PC = Cast<APlayerController>(InstigatorPawn->GetController());
-				if (PC)
+				for (FConstPlayerControllerIterator It = GetWorld()->GetPlayerControllerIterator(); It; It++)
 				{
-					PC->SetViewTargetWithBlend(NewViewTarget, 0.5f, EViewTargetBlendFunction::VTBlend_Cubic);
-				}
-				else
-				{
-					UE_LOG(LogTemp, Warning, TEXT("Camera can not be moved!"));
+					// We don't check for local controller, because we want to move all cameras.
+					APlayerController* PC = It->Get();
+					if (PC)
+					{
+						// Has replication already.
+						PC->SetViewTargetWithBlend(NewViewTarget, 0.5f, EViewTargetBlendFunction::VTBlend_Cubic);
+					}
+					else
+					{
+						UE_LOG(LogTemp, Warning, TEXT("Camera can not be moved!"));
+					}
 				}
 			}
 			else
@@ -54,7 +63,13 @@ void AFPSGameMode::CompleteMission(APawn* InstigatorPawn)
 		}
 	}
 
-	OnMissionCompleted(InstigatorPawn);	// Handled by BP, if BP has it implemented.
+	AFPSGameState* GS = GetGameState<AFPSGameState>();
+	if (GS)
+	{
+		GS->MulticastOnMissionComplete(InstigatorPawn, bMissionSuccess);
+	}
+
+	OnMissionCompleted(InstigatorPawn, bMissionSuccess);	// Handled by BP, if BP has it implemented.
 
 	
 }

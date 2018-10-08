@@ -15,10 +15,10 @@ public:
 
 	AFPSGameMode();
 
-	void CompleteMission(APawn* InstigatorPawn);
+	void CompleteMission(APawn* InstigatorPawn, bool bMissionSuccess);
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "GameMode")
-	void OnMissionCompleted(APawn* InstigatorPawn);	// No implementation, because it's implemented in BP
+	void OnMissionCompleted(APawn* InstigatorPawn, bool bMissionSuccess);	// No implementation, because it's implemented in BP
 
 protected:
 
